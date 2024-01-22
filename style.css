@@ -1,0 +1,54 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+h1 {
+  text-align: center;
+  color: #8b0000;
+}
+.fill {
+  position: relative;
+  padding: 20px;
+  width: fit-content;
+  background-color: black;
+  font-size: 60px;
+  font-weight: 900;
+  cursor: pointer;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 2px #faebd7;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+.fill::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-text-fill-color: #faebd7;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+}
+.fill:hover::after {
+  width: 100%;
+}
